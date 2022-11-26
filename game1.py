@@ -34,6 +34,7 @@ def shutudai(alphabet):
 
 def kaitou(abs_chars):
     num = int(input("欠損文字はいくつあるでしょうか？："))
+    
     if num != num_of_abs_chars:
         print("不正解です。")
     else:
@@ -65,4 +66,3 @@ if __name__ == "__main__":
     ed = time.time()
 
     print(f"所要時間：{(ed-st):.2f}秒")
-    
