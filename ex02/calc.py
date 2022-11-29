@@ -18,6 +18,7 @@ def button_click(event):
          entry.delete(0,tk.END)
          entry.insert(tk.END)
     
+    
 #練習1
 root = tk.Tk()
 root.title("calc")
