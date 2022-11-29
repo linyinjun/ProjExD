@@ -7,9 +7,12 @@ def button_click(event):
     i = btn["text"]
     if i == "=":
         siki = entry.get()
-        res = eval(siki)
-        entry.delete(0, tk.END)
-        entry.insert(tk.END, res)
+        try:
+            res = eval(siki)
+            entry.delete(0, tk.END)
+            entry.insert(tk.END, res)
+        except:
+            tkm.showinfo("警告",f"エラーです！！")
     else:
     #tkm.showinfo(txt,f"[{txt}]ボタンがクリックされました")
         #6
