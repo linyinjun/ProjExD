@@ -52,11 +52,11 @@ if __name__ == "__main__":
     maze_lst = mm.make_maze(15, 9)
     mm.show_maze(canvas, maze_lst)
 
-    sx, sy =1*100+50,1*100+50
+    sx, sy =1*100+50,1*100+50#スタートのイラスト
     z = tk.PhotoImage(file="fig/0.png")
     canvas.create_image(sx, sy, image=z)
 
-    gx, gy = 1350 ,750
+    gx, gy = 1350 ,750#ゴールのイラスト
     zu = tk.PhotoImage(file="fig/6.png")
     canvas.create_image(gx, gy, image=zu)
 
