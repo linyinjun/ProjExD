@@ -6,22 +6,6 @@ import sample as sp
 
 global ct
 ct = True
-
-def count_up():
-    global tmr, jid 
-    label["text"] = tmr
-    tmr = tmr+1
-    jid = root.after(1000, count_up)
-
-def key_down(event):
-    global jid
-    print(jid)
-    if jid is not None: 
-        # カウントアップ中にキーが押されたら
-        # カウントアップ中でないときは，jid is None
-        root.after_cancel(jid)
-        print("cancel")
-        jid = None
     
 def key_down(event):
     global key
@@ -67,7 +51,6 @@ if __name__ == "__main__":
     jid = None
 
     maze_lst = mm.make_maze(15, 9)
-    # print(maze_lst)
     mm.show_maze(canvas, maze_lst)
 
     sx, sy =1*100+50,1*100+50
@@ -90,5 +73,4 @@ if __name__ == "__main__":
     root.bind("<KeyRelease>", key_up)
     main_proc()
     root.mainloop()
-    
     
