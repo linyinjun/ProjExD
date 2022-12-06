@@ -1,4 +1,3 @@
-from random import randint
 import tkinter as tk
 import maze_maker as mm
 import tkinter.messagebox as tkm
