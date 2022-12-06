@@ -14,7 +14,7 @@ def key_down(event):
 def key_up(event):
     global key,ct
     key = ""
-    if cx == 1350 and cy == 750 and ct == True:
+    if cx == 1350 and cy == 750 and ct == True:#ゴールの設置
         tkm.showwarning(root," ゴール")
         cl = None
                 
