@@ -9,7 +9,7 @@ def check_bound(obj_rct, scr_rct):
     # 第2引数：スクリーンrect
     # 範囲内：+1／範囲外：-1
     yoko, tate = +1, +1
-    if obj_rct.left < scr_rct.left or scr_rct.right < obj_rct.right : yoko = -1.4
+    if obj_rct.left < scr_rct.left or scr_rct.right < obj_rct.right : yoko = -1.4#数字を変更した
     if obj_rct.top < scr_rct.top or scr_rct.bottom < obj_rct.bottom : tate = -1.4
     return yoko, tate
 
@@ -34,6 +34,7 @@ def main():
 
     # 練習５
     bomb_sfc = pg.image.load("/Users/linyinjun/Desktop/学校/２年/後期/演習テーマD/ProjExD2022/ProjExD/fig/13.png")
+    #爆弾を図に変更した
     #bomb_sfc = pg.Surface((20, 20)) # 正方形の空のSurface
     #bomb_sfc.set_colorkey((0, 0, 0))
     #pg.draw.circle(bomb_sfc, (255, 0, 0), (10, 10), 10)
@@ -54,13 +55,13 @@ def main():
 
         # 練習4
         key_dct = pg.key.get_pressed() # 辞書型
-        if key_dct[pg.K_UP]   : tori_rct.centery -= 10
+        if key_dct[pg.K_UP]   : tori_rct.centery -= 10#数字を変更した
         if key_dct[pg.K_DOWN] : tori_rct.centery += 10
         if key_dct[pg.K_LEFT] : tori_rct.centerx -= 10
         if key_dct[pg.K_RIGHT]: tori_rct.centerx += 10
         if check_bound(tori_rct, scrn_rct) != (+1, +1):
             # どこかしらはみ出ていたら
-            if key_dct[pg.K_UP]   : tori_rct.centery += 50
+            if key_dct[pg.K_UP]   : tori_rct.centery += 50#数字を変更した
             if key_dct[pg.K_DOWN] : tori_rct.centery -= 50
             if key_dct[pg.K_LEFT] : tori_rct.centerx += 50
             if key_dct[pg.K_RIGHT]: tori_rct.centerx -= 50           
