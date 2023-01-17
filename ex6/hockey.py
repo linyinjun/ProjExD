@@ -1,9 +1,6 @@
-import tkinter.messagebox
-import tkinter.messagebox as tkm
 import pygame as pg
 import random
 import time
-import os
 import sys
 
 
@@ -110,6 +107,21 @@ def check_bound(obj_rct, scr_rct):
     if obj_rct.top < scr_rct.top or scr_rct.bottom < obj_rct.bottom:
         tate = -1
     return yoko, tate
+
+
+def ens():#追加機能end画面の作成（宮川）
+    scr1 = Screen("2Dテニス", SCREENRECT.size, "fig/tennis_court_end.jpg")
+    clock = pg.time.Clock()
+    while True:
+        scr1.blit()
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                return
+        key_dct = pg.key.get_pressed() #辞書型
+        if key_dct[pg.K_SPACE]:
+            return
+        pg.display.update()
+        clock.tick(1000)
     
 
 def main():
@@ -162,7 +174,7 @@ def main():
             ball.vx *= -1
 
         if ball.rct.left < scr.rct.left or scr.rct.right < ball.rct.right: #出たとき
-            return
+            ens()
 
         pg.display.update()
         clock.tick(1000)
@@ -170,10 +182,9 @@ def main():
     root.withdraw()
     main_dir = os.path.split(os.path.abspath(__file__))[0]
 
-
 if __name__ == "__main__":
     pg.init()
+    ens()
     main()
-    tkm.showwarning("まけ","GAMEOVER") #ゲームオーバー画面を追加する
     pg.quit()
     sys.exit()
