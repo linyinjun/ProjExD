@@ -109,7 +109,7 @@ def check_bound(obj_rct, scr_rct):
     return yoko, tate
 
 
-def ens():#追加機能end画面の作成（宮川）
+def end():#追加機能end画面の作成（林）
     scr1 = Screen("2Dテニス", SCREENRECT.size, "fig/tennis_court_end.jpg")
     clock = pg.time.Clock()
     while True:
@@ -174,7 +174,7 @@ def main():
             ball.vx *= -1
 
         if ball.rct.left < scr.rct.left or scr.rct.right < ball.rct.right: #出たとき
-            ens()
+            end()
 
         pg.display.update()
         clock.tick(1000)
@@ -184,7 +184,7 @@ def main():
 
 if __name__ == "__main__":
     pg.init()
-    ens()
+    end()
     main()
     pg.quit()
     sys.exit()
